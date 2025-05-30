@@ -1,0 +1,5 @@
+package ifba.mod4.model;
+
+public class Evento {
+
+}

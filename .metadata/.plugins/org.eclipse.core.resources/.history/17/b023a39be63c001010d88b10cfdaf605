@@ -1,0 +1,30 @@
+package ifba.mod4.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ifba.mod4.model.Evento;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
+@RestController
+@RequestMapping("evento")
+public class EventoControle {
+
+	@PostMapping
+	public Evento inserir(@RequestBody Evento e) {
+		return entity;
+	}
+	
+	@GetMapping
+	public String listar(@RequestParam String param) {
+		return new String();
+	}
+	
+	
+}

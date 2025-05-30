@@ -1,0 +1,64 @@
+package ifba.mod4.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ifba.mod4.model.Evento;
+import ifba.mod4.model.Participante;
+import ifba.mod4.repository.EventoRepositorio;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
+@RestController
+@RequestMapping("evento")
+public class EventoControle {
+
+	@Autowired
+	EventoRepositorio repo;
+	
+	@PostMapping
+	public Evento inserir(@RequestBody Evento e) {
+		return repo.save(e);
+	}
+	
+	@GetMapping
+	public List<Evento> listar() {
+		return repo.findAll();
+	}
+	
+	@GetMapping("/{id}")
+	public Optional<Evento> localizarPorID(@PathVariable Long id) {
+		return repo.findById(id);
+	}
+	
+	@PutMapping
+	public Evento alterarPorID(@RequestBody Evento e) {
+		return repo.save(e);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void excluir(@PathVariable Long id) {
+		repo.deleteById(id);
+	}
+	
+	@PutMapping("/{id}")
+	public Evento addParticipantes(@PathVariable Long id, @RequestBody Participante p) {
+		Evento evento = repo.findById(id).orElse(null);
+		evento.addParticipante(p);
+		return repo.save(evento);
+	}
+	
+}

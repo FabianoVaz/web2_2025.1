@@ -1,0 +1,16 @@
+package ifba.mod4.model;
+
+
+public class Participante {
+
+	private Long id;
+	
+	private String nome;
+	private String cpf;
+	private String email;
+	private String senha;
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+}

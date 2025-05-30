@@ -1,0 +1,9 @@
+package ifba.mod4.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("participante")
+public class ParticipanteControle {
+
+	
+}

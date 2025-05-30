@@ -1,0 +1,36 @@
+package ifba.mod4.model;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import lombok.Data;
+
+@Data
+@Entity
+public class Evento {
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.SEQUENCE)
+	private Long id;
+	
+	private String titulo;
+	private Integer capacidade;
+	private LocalDate dataInicio;
+	private LocalDate dataFim;
+	
+	@ManyToMany
+	List<Participante> participantes;
+	
+	public void addParticipante(Participante p) {
+		participantes.add(p);
+	}
+	
+	public void delParticipante(Participante p) {
+		participantes.add(p);
+	}
+}

@@ -1,0 +1,52 @@
+package ifba.mod4.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import ifba.mod4.model.Participante;
+import ifba.mod4.repository.ParticipanteRepositorio;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+
+@RestController
+@RequestMapping("participante")
+public class ParticipanteControle {
+
+	/**
+	 * INSERT -> POST
+	 * DELETE -> DELETE
+	 * UPDATE -> PUT
+	 * SELECT -> GET 
+	 * 
+	 */
+	
+	@Autowired
+	ParticipanteRepositorio repo;
+	
+	@PostMapping
+	public Participante inserir(@RequestBody Participante p) {
+		return repo.save(p);
+	}
+	
+	@GetMapping
+	public List<Participante> listar() {
+		return repo.findAll();
+	}
+	
+	@GetMapping("/{id}")
+	public Optional<Participante> localizarPorID(@PathVariable Long id) {
+		return repo.findById(id);
+	}
+	
+	
+	
+}
