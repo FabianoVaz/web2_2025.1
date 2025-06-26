@@ -1,0 +1,74 @@
+{
+    "eventos": [
+      {
+        "id": 1,
+        "nome": "Seminário de Inovação",
+        "data": "2025-08-15",
+        "local": "Auditório IFBA",
+        "descricao": "Evento sobre tecnologias emergentes e inovação."
+      },
+      {
+        "id": 2,
+        "nome": "Workshop de Desenvolvimento Web",
+        "data": "2025-09-05",
+        "local": "Sala A15 - IFBA",
+        "descricao": "Oficina prática sobre desenvolvimento de aplicações web."
+      },
+      {
+        "id": 3,
+        "nome": "Projeto de Desenvolvimento Web",
+        "data": "2025-08-10",
+        "local": "Sala A14 - IFBA",
+        "descricao": "Teste"
+      }
+    ],
+    "participantes": [
+      {
+        "id": 101,
+        "nome": "Ana Silva",
+        "email": "ana.silva@email.com",
+        "telefone": "(75) 99999-1111"
+      },
+      {
+        "id": 102,
+        "nome": "Carlos Souza",
+        "email": "carlos.souza@email.com",
+        "telefone": "(75) 98888-2222"
+      },
+      {
+        "id": 103,
+        "nome": "Fernanda Lima",
+        "email": "fernanda.lima@email.com",
+        "telefone": "(75) 97777-3333"
+      },
+      {
+        "id": 104,
+        "nome": "José Santos",
+        "email": "jose.santos@email.com",
+        "telefone": "(75) 96666-4444"
+      }
+    ],
+    "participacoes": [
+      {
+        "evento_id": 1,
+        "participante_id": 101,
+        "tipo": "Palestrante"
+      },
+      {
+        "evento_id": 1,
+        "participante_id": 102,
+        "tipo": "Participante"
+      },
+      {
+        "evento_id": 2,
+        "participante_id": 103,
+        "tipo": "Instrutora"
+      },
+      {
+        "evento_id": 2,
+        "participante_id": 104,
+        "tipo": "Participante"
+      }
+    ]
+  }
+  
